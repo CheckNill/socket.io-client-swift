@@ -75,8 +75,8 @@ public final class SocketAckEmitter : NSObject {
 
         do {
             socket.emitAck(ackNum, with: try items.map({ try $0.socketRepresentation() }))
-        } catch {
-            socket.handleClientEvent(.error, data: [ackNum, items, error])
+        } catch let err {
+            socket.handleClientEvent(.error, data: [ackNum, items, err])
         }
     }
 

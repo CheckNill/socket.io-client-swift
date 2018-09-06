@@ -46,7 +46,7 @@ import Foundation
 /// or call one of the `disconnectSocket` methods on this class.
 ///
 @objc
-public protocol SocketManagerSpec : AnyObject, SocketEngineClient {
+public protocol SocketManagerSpec : class, SocketEngineClient {
     // MARK: Properties
 
     /// Returns the socket associated with the default namespace ("/").
